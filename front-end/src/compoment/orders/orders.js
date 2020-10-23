@@ -3,6 +3,7 @@ import { Button, Table } from "antd";
 
 class orders extends Component {
   state = {
+    orderId:"12345",
     column: [
       {
         title: "#",
@@ -29,21 +30,35 @@ class orders extends Component {
       {
         id: "1",
         name: "可乐",
-        price: "￥3.00",
+        unit: "￥3.00",
         number: "1",
       }
       
     ],
   };
 
+  OrderInfo =(props) => {
+    var orderId = this.props.orderId ;
+    
+      return (
+        <div>
+          订单编号：<p>{this.props.orderId}</p>
+        </div>
+      );
+    
+  };
+
   render() {
     return (
+      <div>
+      <this.OrderInfo orderId={this.state.orderId}></this.OrderInfo>
       <Table
         columns={this.state.column}
         dataSource={this.state.data}
         bordered
-        title={() => "订单编号" }
       />
+      {this.state.orderId}
+      </div>
     );
   }
 }
