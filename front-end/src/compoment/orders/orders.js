@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button, Table } from "antd";
-import "antd/dist/antd.css";
+
 class orders extends Component {
   state = {
     column: [
